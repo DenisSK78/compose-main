@@ -1,14 +1,20 @@
 version: '3.3'
 services:
-  web:
+  app:
     image: denis78/compose-main:latest
+    container_name: app
     ports:
       - "9000:9000"
+    restart: unless-stopped
   sonarr:
     image: denis78/compose-first:latest
+    container_name: app-sonar
     ports:
       - "9001:9001"
+    restart: unless-stopped
   radarr:
     image: denis78/compose-second:latest
+    container_name: app-radar
     ports:
       - "9002:9002"
+    restart: unless-stopped
